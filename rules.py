@@ -3,16 +3,16 @@ import json
 import ssl
 
 # Create an unverified SSL context
-conn = http.client.HTTPSConnection("192.168.1.50", context=ssl._create_unverified_context())
+conn = http.client.HTTPSConnection("192.168.29.238", context=ssl._create_unverified_context())
 payload = ''
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
-  'X-PAN-Key': 'LUFRPT1MbUtJL2hSWFg4ZCtBMTAvUHFYUkorSGwvREU9MkEzM3lDRzVYWkFmSW5Jd0JIdzFuYlA3bjVZVDExZWxVM0VaOGdqWWVLcDBYcWNqQUpqcXJ0L1lmNHhRVEZMNQ=='
+  'X-PAN-Key': 'LUFRPT1obHVQZ045bWFzckxHVGl6MGl1b1NaSU5uVkk9MkEzM3lDRzVYWkFmSW5Jd0JIdzFuUTZNd3UxVitXQmIrRHMzUGRPZmxWRzVpZHpWdG9qRnR4RFRLMUgzZHYrbQ=='
 }
 
 # Send the request to the firewall
-conn.request("GET", "/restapi/v11.1/Policies/SecurityRules?location=vsys&vsys=vsys1", payload, headers)
+conn.request("GET", "/restapi/v10.2/Policies/SecurityRules?location=vsys&vsys=vsys1", payload, headers)
 res = conn.getresponse()
 
 # Read the response
